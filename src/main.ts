@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import fs from 'fs'
 import axios, {isAxiosError} from 'axios'
 import * as github from '@actions/github'
-import {PullRequestEvent} from '@octokit/webhooks-definitions/schema'
+import {PullRequestEvent} from '@octokit/webhooks-types'
 import {getInput} from './options'
 import {validate} from './pr'
 
@@ -71,7 +71,7 @@ async function run(): Promise<void> {
       )
     }
   } catch (error) {
-    core.setFailed(error.message)
+    core.setFailed((error as Error).message)
   }
 }
 
