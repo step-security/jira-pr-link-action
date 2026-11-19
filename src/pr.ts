@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import {PullRequestEvent} from '@octokit/webhooks-definitions/schema'
+import {PullRequestEvent} from '@octokit/webhooks-types'
 import {Options} from './options'
 
 /**
@@ -14,7 +14,9 @@ export function validate(event: PullRequestEvent, options: Options): boolean {
   try {
     re = RegExp(`^(?:${project})-[0-9]+`)
   } catch (error) {
-    throw new Error(`Invalid project pattern '${project}': ${error.message}`)
+    throw new Error(
+      `Invalid project pattern '${project}': ${(error as Error).message}`
+    )
   }
 
   core.info('author ' + event.pull_request.user.login.toLowerCase())

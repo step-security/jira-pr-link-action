@@ -1,4 +1,4 @@
-import {PullRequestEvent} from '@octokit/webhooks-definitions/schema'
+import {PullRequestEvent} from '@octokit/webhooks-types'
 
 export const pr: PullRequestEvent = {
   action: 'opened',
@@ -102,6 +102,11 @@ export const pr: PullRequestEvent = {
         name: 'jira-pr-link-action',
         full_name: 'step-security/jira-pr-link-action',
         private: false,
+        is_template: false,
+        web_commit_signoff_required: false,
+        topics: [],
+        visibility: 'public',
+        custom_properties: {},
         owner: {
           login: 'step-security',
           id: 21031067,
@@ -272,6 +277,11 @@ export const pr: PullRequestEvent = {
         name: 'jira-pr-link-action',
         full_name: 'step-security/jira-pr-link-action',
         private: false,
+        is_template: false,
+        web_commit_signoff_required: false,
+        topics: [],
+        visibility: 'public',
+        custom_properties: {},
         owner: {
           login: 'step-security',
           id: 21031067,
@@ -461,6 +471,11 @@ export const pr: PullRequestEvent = {
     name: 'jira-pr-link-action',
     full_name: 'step-security/jira-pr-link-action',
     private: false,
+    is_template: false,
+    web_commit_signoff_required: false,
+    topics: [],
+    visibility: 'public',
+    custom_properties: {},
     owner: {
       login: 'step-security',
       id: 21031067,
